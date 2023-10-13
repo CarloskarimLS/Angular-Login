@@ -1,0 +1,15 @@
+<div>
+  <h2>Inicio de sesión</h2>
+  <p>{{ mensajeError }}</p>
+  <form (ngSubmit)="iniciarSesion()">
+    <div>
+      <label for="usuario">Usuario</label>
+      <input type="text" id="usuario" [(ngModel)]="usuario" name="usuario" placeholder="Usuario" required>
+    </div>
+    <div>
+      <label for="contrasena">Contraseña</label>
+      <input type="password" id="contrasena" [(ngModel)]="contrasena" name="contrasena" placeholder="Contraseña" required>
+    </div>
+    <button type="submit">Iniciar sesión</button>
+  </form>
+</div>

@@ -1,0 +1,13 @@
+<div>
+    <h2>Consulta de Servicio</h2>
+    <button (click)="consultarServicio()">Consultar Servicio</button>
+    <div *ngIf="data">
+      <h3>Datos obtenidos del servicio:</h3>
+      <ul>
+        <li *ngFor="let item of data">
+          {{ item.nombre }} - {{ item.descripcion }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
