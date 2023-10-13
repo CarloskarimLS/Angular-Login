@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-tu-componente',
-  templateUrl: './tu-componente.component.html',
-  styleUrls: ['./tu-componente.component.css']
+  selector: 'app-service',
+  templateUrl: './servicio.component.html',
+  styleUrls: ['./servicio.component.css']
 })
-export class TuComponenteComponent {
+export class ServiceComponent {
 
   constructor(private http: HttpClient) {}
 
