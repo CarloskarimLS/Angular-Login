@@ -1,19 +1,26 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { Component, OnInit } from '@angular/core';
+import { MyService } from './serviciojson.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-service',
   templateUrl: './servicio.component.html',
-  styleUrls: ['./servicio.component.css']
+  styleUrls: ['./servicio.component.css'],
+  providers: [MyService]
 })
-export class ServiceComponent {
+export class ServiceComponent implements OnInit {
+  tasks: any[] = []; 
 
-  constructor(private http: HttpClient) {}
+  constructor(private myService: MyService, private router: Router) {}
 
-  consultarServicio(): void {
-    this.http.get('https://ejemplo.com/api/data').subscribe((data: any) => {
-      // Aquí puedes manejar la respuesta del servicio
-      console.log(data);
+  ngOnInit(): void{
+    debugger;
+    this.myService.getData().subscribe((data) => {
+      this.tasks = data;
     });
   }
+
+  goDashboard(): void{
+    this.router.navigate(['/dashboard']);
+  }
+
 }

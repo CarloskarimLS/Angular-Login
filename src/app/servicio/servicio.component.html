@@ -1,13 +1,21 @@
 <div>
-    <h2>Consulta de Servicio</h2>
-    <button (click)="consultarServicio()">Consultar Servicio</button>
-    <div>
-      <h3>Datos obtenidos del servicio:</h3>
-      <ul>
-        <li >
-          Hola
-        </li>
-      </ul>
-    </div>
+  <div>
+    <button (click)="goDashboard()">Dashboard</button>
   </div>
-  
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Título</th>
+      <th>Completado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{task.id}}</td>
+      <td>{{task.title}}</td>
+      <td>{{task.completed}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

@@ -12,8 +12,12 @@ export class DashboardComponent {
 
   logout(): void {
     debugger;
-    // Realiza el cierre de sesión (simplemente redirige al usuario al inicio de sesión)
     this.router.navigate(['/login']);
+  }
+
+  goServices(): void {
+    debugger;
+    this.router.navigate(['/service']);
   }
 
 }
