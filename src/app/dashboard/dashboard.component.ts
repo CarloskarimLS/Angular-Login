@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 //Hola
 //Prueba
+//Prueba desde segunda maquina :D 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
