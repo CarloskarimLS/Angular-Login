@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 
 //Hola
+//Prueba
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
