@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ServiceModule } from './servicio/servicio.module';
+import { ApiModule } from './apis/apis.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ServiceModule } from './servicio/servicio.module';
     FormsModule,
     LoginModule,
     DashboardModule,
-    ServiceModule   
+    ServiceModule,
+    ApiModule   
   ],
   providers: [],
   bootstrap: [AppComponent]
