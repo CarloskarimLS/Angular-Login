@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApisComponent implements OnInit {
     works: any[] = []; 
-
+    //I nedd to add a interface, then parse the json request
     constructor(private http: HttpClient, private router: Router) {}
 
     ngOnInit(): void{
