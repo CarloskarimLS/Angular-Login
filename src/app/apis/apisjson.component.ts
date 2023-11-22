@@ -10,5 +10,6 @@ export class MyApi {
 
     getWorks(): Observable<any> {
         return this.http.get('https://api.openalex.org/works?sample=20');
+        
     }
 }

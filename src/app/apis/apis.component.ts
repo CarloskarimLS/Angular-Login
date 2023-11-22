@@ -10,19 +10,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApisComponent implements OnInit {
     works: any[] = []; 
+    
     //I nedd to add a interface, then parse the json request
-    constructor(private http: HttpClient, private router: Router) {}
-
+    constructor(private myApi: MyApi, private router: Router) {}
+    
     ngOnInit(): void{
-        this.http.get<any[]>('https://api.openalex.org/works?sample=20').subscribe(
-        (response) => {
-          this.works = response;
-          console.log(response);
-        },
-        (error) => {
-        console.error('Error al obtener los datos', error);
-      }
-    );
+      this.myApi.getWorks().subscribe((data) =>{
+        this.works = data;
+        console.log(data);
+      });
     }
 
     goDashboard(): void{
