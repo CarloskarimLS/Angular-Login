@@ -1,26 +1,14 @@
-import { Component} from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, AfterViewInit } from '@angular/core';
+//declare var require: any;
 
-//Hola
-//Prueba
-//Prueba desde segunda maquina :D 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  templateUrl: './dashboard.component.html'
 })
-export class DashboardComponent {
-
-  constructor(private router: Router) {}
-
-  logout(): void {
-    debugger;
-    this.router.navigate(['/login']);
+export class DashboardComponent implements AfterViewInit {
+  subtitle: string;
+  constructor() {
+    this.subtitle = 'This is some text within a card block.';
   }
 
-  goServices(): void {
-    debugger;
-    this.router.navigate(['/service']);
-  }
-
+  ngAfterViewInit() { }
 }

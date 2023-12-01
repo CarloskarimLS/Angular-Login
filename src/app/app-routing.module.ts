@@ -1,20 +1,30 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component'; 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ServiceComponent } from './servicio/servicio.component';
-import { ApisComponent } from './apis/apis.component';
+import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent},
-  { path: 'service', component: ServiceComponent},
-  { path: 'api', component: ApisComponent},
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+import { FullComponent } from './layouts/full/full.component';
+
+export const Approutes: Routes = [
+  {
+    path: '',
+    component: FullComponent,
+    children: [
+      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      {
+        path: 'dashboard',
+        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+      },
+      {
+        path: 'about',
+        loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
+      },
+      {
+        path: 'component',
+        loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule)
+      }
+    ]
+  },
+  {
+    path: '**',
+    redirectTo: '/starter'
+  }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
