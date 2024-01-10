@@ -3,7 +3,7 @@ export interface IWorks {
     results:  Result[];
     group_by: any[];
 }
-
+//interface
 export interface Meta {
     count:               number;
     db_response_time_ms: number;
