@@ -1,8 +1,7 @@
-import { Input, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor, NgIf } from '@angular/common';
 import { MyService } from './service.component';
-import { Router } from '@angular/router';
 import { IWorks } from './IWorks';
 @Component({
   selector: 'app-ngbd-alert',
@@ -23,56 +22,37 @@ import { IWorks } from './IWorks';
 export class NgbdAlertBasicComponent implements OnInit  {
   initialValue: IWorks[] = []; 
   // this is for the Closeable Alert
-  @Input() public alerts: Array<IAlert> = [];
-  
 
-  private backup: Array<IAlert>;
-  constructor(private myService: MyService, private router: Router) {
-    this.alerts.push(
-      {
-        id: 1,
-        type: 'primary',
-        message: 'This is a primary alert',
+  constructor(private myService: MyService) {
+    
+  }
+  // ngOnInit(): void{
+
+  //   this.myService.getData().subscribe((data) => {
+  //     // const initialValue: IWorks = data;
+  //     // this.initialValue = data;
+  //     //   console.log(data);
+  //     //   console.log(this.initialValue);
+  //     //   console.log("initial value: " + initialValue);
+  //     //   console.log(initialValue.meta.count);
+  //     //   console.log(JSON.stringify(this.initialValue));
+  //     this.initialValue = data;
+  //     console.log(data);
+  //     console.log(JSON.stringify(this.initialValue));
+  //   });
+  // }
+  ngOnInit(): void {
+    this.myService.getData().subscribe(
+      (data) => {
+        this.initialValue = data;
+        console.log('Datos asignados:', this.initialValue);
       },
-      {
-        id: 2,
-        type: 'info',
-        message: 'This is an info alert',
-      },
-      {
-        id: 3,
-        type: 'success',
-        message: 'This is an success alert',
-      },
-      {
-        id: 4,
-        type: 'warning',
-        message: 'This is a warning alert',
-      },
-      {
-        id: 5,
-        type: 'danger',
-        message: 'This is a danger alert',
-      },
-      {
-        id: 6,
-        type: 'secondary',
-        message: 'This is an secondary alert',
+      (error) => {
+        console.error('Error al obtener datos:', error);
       }
     );
-    this.backup = this.alerts.map((alert: IAlert) => Object.assign({}, alert));
   }
-  ngOnInit(): void{
-
-    this.myService.getData().subscribe((data) => {
-      const initialValue: IWorks = data;
-      this.initialValue = data;
-        console.log(data);
-        console.log(this.initialValue);
-        console.log(initialValue.results);
-
-    });
-  }
+  
 }
 
 export interface IAlert {
