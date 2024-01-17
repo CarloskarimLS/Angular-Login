@@ -68,6 +68,7 @@ export class NgbdAlertBasicComponent implements OnInit  {
             ? data.meta.count[0] : '' 
         }
 
+        //https://stackoverflow.com/questions/69107755/angular-error-typeerror-cannot-read-properties-of-undefined-reading-licence
         data.meta.count = meta;
 
         console.log(meta)
