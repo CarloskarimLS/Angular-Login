@@ -10,7 +10,7 @@
       <div class="card-body border-top">
         <p *ngFor="let alert of alerts">
           <ngb-alert [type]="alert.type" [dismissible]="false" class="customize-alert fs-4">
-            {{ alert.type }} - {{ alert.message }}
+            {{ alertch.type }} - {{ alert.message }}
           </ngb-alert>
         </p>
       </div>
@@ -34,7 +34,7 @@
                 <!-- Muestra el objeto como una cadena JSON -->
                 <!-- Muestra la cadena JSON del objeto -->
                 
-                <p>{{ initialValue }}</p>
+                <p>{{ this.initialValue[0].meta }}</p>
 
 
                 </div>

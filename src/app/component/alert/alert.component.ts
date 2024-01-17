@@ -3,6 +3,7 @@ import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor, NgIf } from '@angular/common';
 import { MyService } from './service.component';
 import { IWorks } from './IWorks';
+import { count } from 'rxjs';
 @Component({
   selector: 'app-ngbd-alert',
   standalone: true,
@@ -43,9 +44,37 @@ export class NgbdAlertBasicComponent implements OnInit  {
   // }
   ngOnInit(): void {
     this.myService.getData().subscribe(
-      (data) => {
+      (data: any) => {
         this.initialValue = data;
         console.log('Datos asignados:', this.initialValue);
+        const c = {initialValue: []}
+        console.log(c.initialValue)
+        console.log(c.initialValue[0])
+        console.log(data)
+        
+        if(!data){
+          return data;
+        }
+        if(!data.meta) return data;
+
+        if(!data.meta.count) return data;
+        
+        let meta: IWorks = {
+          ...data.meta.count,
+          count:
+            ( data.meta.count &&
+              data.meta.count[0]
+            )
+            ? data.meta.count[0] : '' 
+        }
+
+        data.meta.count = meta;
+
+        console.log(meta)
+        console.log(data)
+        
+        console.log(data.meta.count)
+        
       },
       (error) => {
         console.error('Error al obtener datos:', error);
