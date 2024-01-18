@@ -1,5 +1,11 @@
 <div class="row">
-  <button type="button" (click)="onClickMe()">Click me!</button>
+  <div class="row">
+    <div class="col-lg-12">
+      <h4 class="card-title mb-0">Number of records:</h4>
+      <input type="number" [(ngModel)]="id" placeholder="Ingrese un valor entero">
+      <button type="button" (click)="sendId()">Enviar</button>
+    </div>
+  </div>
 
   <div class="col-lg-12">
     <!-- ==================================-->

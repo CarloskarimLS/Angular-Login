@@ -8,10 +8,11 @@ import { Observable, tap } from "rxjs";
 export class MyService {
     constructor(private http: HttpClient){}
 
-    getData(): Observable<any> {
-        return this.http.get('https://api.openalex.org/works?sample=20').pipe(
-          tap(data => console.log('Datos del servicio:', data))
-        );
-      }
+    getData(sample: number): Observable<any> {
+      const url = `https://api.openalex.org/works?sample=${sample}`;
+      return this.http.get(url).pipe(
+        tap(data => console.log('Datos del servicio:', data))
+      );
+    }
       
 }
