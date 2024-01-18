@@ -28,16 +28,31 @@
       <div class="card-body border-top">
         <div class="container">
           <div class="row">
-              <div class="col">
-                <!-- Verifica si 'initialValue' tiene al menos un elemento antes de intentar acceder a 'meta' -->
-                <!-- <p *ngIf="initialValue.length > 0">Count: {{ "hola" }}</p> -->
-                <!-- Muestra el objeto como una cadena JSON -->
-                <!-- Muestra la cadena JSON del objeto -->
-                
-                <p>{{ this.initialValue[0].meta }}</p>
-
-
-                </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Lenguaje</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-container *ngFor="let result of initialValue.results">
+                    <tr>
+                      <td>{{ result.id }}</td>
+                      <td>{{ result.title }}</td>
+                      <td>{{ result.language }}</td>
+                    </tr>
+                  </ng-container>
+                </tbody>
+              </table>
+              <!-- <div class="col">
+                <p>{{ initialValue.meta.count }}</p>
+                <p>{{ initialValue.meta.page }}</p>
+                <p>{{ initialValue.results[0].id}}</p>
+                <p>{{ initialValue.results[0].title}}</p>
+                <p>{{ initialValue.results[0].language}}</p>
+                </div> -->
             </div>
           </div>
         </div>
