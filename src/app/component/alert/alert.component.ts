@@ -33,5 +33,11 @@ export class NgbdAlertBasicComponent implements OnInit  {
       }
     );
   }
+
+  clickMessage = '';
+  //https://angular.io/guide/user-input
+  onClickMe() {
+    console.log("click");
+  }
   
 }
