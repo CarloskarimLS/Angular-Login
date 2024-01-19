@@ -15,4 +15,10 @@ export class ServiceAuthors {
       );
     }
       
+    getAuthorById(id: string): Observable<any> {
+      const url = `https://api.openalex.org/authors/${id}`;
+      return this.http.get(url).pipe(
+        tap(data => console.log('Service Data:', data))
+      );
+    }
 }
