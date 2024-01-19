@@ -26,7 +26,6 @@ export class NgbdAlertBasicComponent implements OnInit  {
   @Input() id: number = 20;
   
   ngOnInit(): void {
-    debugger;
     this.myService.getData(this.id).subscribe(
       (data: IWorks) => {
         this.initialValue = data;
