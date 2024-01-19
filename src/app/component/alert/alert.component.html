@@ -1,29 +1,56 @@
 <div class="row">
   <div class="row">
     <div class="col-lg-12">
+      <div class="p-3">
       <h4 class="card-title mb-0">Number of records:</h4>
       <input type="number" [(ngModel)]="id" placeholder="Ingrese un valor entero">
-      <button type="button" (click)="sendId()">Enviar</button>
+      <button type="button" (click)="sendId()">Send</button>
+    </div>
     </div>
   </div>
 
   <div class="col-lg-12">
-    <!-- ==================================-->
-    <!-- ======== Outline Alert ========= -->
-    <!-- ==================================-->
+    <div class="card">
+      <div class="p-3">
+        <h4 class="card-title mb-0">Info</h4>
+      </div>
+      <div class="card-body border-top">
+        <div class="container">
+          <div class="container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Count</th>
+                  <th>Response Time</th>
+                </tr>
+              </thead>
+              <tbody>              
+                  <tr>
+                    <td>{{ initialValue.meta.count }}</td>
+                    <td>{{ initialValue.meta.db_response_time_ms }}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12">
     <div class="card">
       <div class="p-3">
         <h4 class="card-title mb-0">Works</h4>
       </div>
       <div class="card-body border-top">
         <div class="container">
-          <div class="row">
+          <div class="container">
               <table>
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Título</th>
-                    <th>Lenguaje</th>
+                    <th>Title</th>
+                    <th>Lenguage</th>
                   </tr>
                 </thead>
                 <tbody>

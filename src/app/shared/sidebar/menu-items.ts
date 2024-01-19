@@ -12,7 +12,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/component/alert',
-    title: 'Documents',
+    title: 'Works',
     icon: 'bi bi-file-earmark',
     class: '',
     extralink: false,
@@ -20,32 +20,32 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/component/badges',
-    title: 'Badges',
-    icon: 'bi bi-patch-check',
+    title: 'Authors',
+    icon: 'bi bi-person-lines-fill',
     class: '',
     extralink: false,
     submenu: []
   },
   {
     path: '/component/buttons',
-    title: 'Button',
-    icon: 'bi bi-hdd-stack',
+    title: 'Sources',
+    icon: 'bi bi-journal-text',
     class: '',
     extralink: false,
     submenu: []
   },
   {
     path: '/component/card',
-    title: 'Card',
-    icon: 'bi bi-card-text',
+    title: 'Institutions',
+    icon: 'bi bi-buildings',
     class: '',
     extralink: false,
     submenu: []
   },
   {
     path: '/component/dropdown',
-    title: 'Dropdown',
-    icon: 'bi bi-menu-app',
+    title: 'Publishers',
+    icon: 'bi bi-building',
     class: '',
     extralink: false,
     submenu: []
