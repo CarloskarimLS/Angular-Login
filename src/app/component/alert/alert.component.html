@@ -4,65 +4,65 @@
       <div class="p-3">
       <h4 class="card-title mb-0">Number of records:</h4>
       <input type="number" [(ngModel)]="id" placeholder="Ingrese un valor entero">
-      <button type="button" (click)="sendId()">Send</button>
+      <button type="button" (click)="sendId()">Go</button>
     </div>
     </div>
   </div>
 
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="p-3">
-        <h4 class="card-title mb-0">Info</h4>
-      </div>
-      <div class="card-body border-top">
-        <div class="container">
-          <div class="container">
-            <table>
-              <thead>
-                <tr>
-                  <th>Count</th>
-                  <th>Response Time</th>
-                </tr>
-              </thead>
-              <tbody>              
-                  <tr>
-                    <td>{{ initialValue.meta.count }}</td>
-                    <td>{{ initialValue.meta.db_response_time_ms }}</td>
-                  </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="p-3">
-        <h4 class="card-title mb-0">Works</h4>
-      </div>
-      <div class="card-body border-top">
-        <div class="container">
-          <div class="container">
-              <table>
+  <div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Info</h4>
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle text-nowrap">
                 <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Lenguage</th>
-                  </tr>
+                    <tr>
+                        <th class="text-dark font-medium fs-4">Count</th>
+                        <th class="text-dark font-medium fs-4">Response Time</th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <ng-container *ngFor="let result of initialValue.results">
-                    <tr>
-                      <td>{{ result.id }}</td>
-                      <td>{{ result.title }}</td>
-                      <td>{{ result.language }}</td>
-                    </tr>
-                  </ng-container>
+                        <td>{{ initialValue.meta.count }}</td>
+                        <td>{{ initialValue.meta.db_response_time_ms }}</td>
                 </tbody>
-              </table>
+            </table>
+        </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Works</h4>
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle text-nowrap">
+                <thead>
+                    <tr>
+                        <th class="text-dark font-medium fs-4">#</th>
+                        <th class="text-dark font-medium fs-4">ID</th>
+                        <th class="text-dark font-medium fs-4">Title</th>
+                        <th class="text-dark font-medium fs-4">Lenguage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let result of initialValue.results; index as i'>
+                        <td>
+                            {{ i + 1 }}
+                        </td>
+                        <td>
+                            {{result.id}}
+                        </td>
+                        <td>
+                            {{ result.title }}
+                        </td>
+                        <td>
+                          {{ result.language }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+
               <!-- <div class="col">
                 <p>{{ initialValue.meta.count }}</p>
                 <p>{{ initialValue.meta.page }}</p>
@@ -70,9 +70,5 @@
                 <p>{{ initialValue.results[0].title}}</p>
                 <p>{{ initialValue.results[0].language}}</p>
                 </div> -->
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
+         
 </div>
