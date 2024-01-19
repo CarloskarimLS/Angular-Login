@@ -24,6 +24,11 @@
           </mat-expansion-panel-header>
           <input type="string" [(ngModel)]="openAlexId">
           <button type="button" (click)="searchAuthor()">Search</button>
+          <div *ngIf="errorInSearch && searchById === false" class="alert">
+              <div >
+                Error in search
+              </div>
+            </div>
         </mat-expansion-panel>
       </mat-accordion>
       
@@ -31,7 +36,7 @@
   </div>
 
 
-  <div class="card">
+  <div class="card" *ngIf="searchById === false">
     <div class="card-body">
         <h4 class="card-title">Works</h4>
         <div class="table-responsive">
@@ -65,12 +70,29 @@
     </div>
   </div>
 
-              <!-- <div class="col">
-                <p>{{ initialValue.meta.count }}</p>
-                <p>{{ initialValue.meta.page }}</p>
-                <p>{{ initialValue.results[0].id}}</p>
-                <p>{{ initialValue.results[0].title}}</p>
-                <p>{{ initialValue.results[0].language}}</p>
-                </div> -->
-         
+  <div class="card"  *ngIf="searchById === true">
+    <div class="card-body">
+        <h2 class="card-title">{{ initialValueById.display_name }}</h2>
+        <div>
+          <ul>
+            <li>OpenAlexID: {{ initialValueById.id }}</li>
+            <li>OrcID: {{ initialValueById.orcid }}</li>
+            <li>Count of Works: {{ initialValueById.works_count }}</li>
+          </ul>
+        </div>
+        <div>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Name Altrernatives
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+              <ul>
+                <li *ngFor='let name of initialValueById.display_name_alternatives'>{{ name }}</li>
+              </ul>
+          </mat-expansion-panel>
+        </div>
+    </div>
+  </div>
 </div>
