@@ -78,6 +78,8 @@ export class LoginFormComponent {
   submit() {
     if (this.form.valid) {
       this.submitEM.emit(this.form.value);
+      console.log(this.form.value)
+       
     }
   }
 
