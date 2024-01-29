@@ -67,6 +67,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 
 })
 export class LoginFormComponent {
+  //https://www.youtube.com/watch?v=2Kb1_zuq0cI
 
  @Input() error: string = '';
 
