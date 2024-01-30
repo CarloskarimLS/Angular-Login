@@ -11,23 +11,30 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { FullComponent } from './layouts/full/full.component';
-
 
 import { NavigationComponent } from './shared/header/navigation.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
-import { Approutes } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import { MaterialModule } from './material.module';
 
 import { LoginFormComponent } from './login-form.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
+import { LoginComponent } from './auth/login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
+    AuthLayoutComponent,
+    DashboardLayoutComponent,
+    LoginComponent,
+    DashboardComponent,
   ],
   imports: [
     CommonModule,
@@ -37,8 +44,6 @@ import { LoginFormComponent } from './login-form.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
-    RouterModule.forRoot(Approutes, { useHash: false }),
-    FullComponent,
     SidebarComponent,
     NavigationComponent,
     MaterialModule,
