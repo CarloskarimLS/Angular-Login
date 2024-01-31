@@ -20,21 +20,18 @@ import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import { MaterialModule } from './material.module';
 
-import { LoginFormComponent } from './login-form.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginFormComponent,
     AuthLayoutComponent,
     DashboardLayoutComponent,
-    LoginComponent,
-    DashboardComponent,
   ],
   imports: [
     CommonModule,
@@ -47,13 +44,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SidebarComponent,
     NavigationComponent,
     MaterialModule,
+    AppRoutingModule,
   ],
-  providers: [
-    {
-      provide: LocationStrategy,
-      useClass: PathLocationStrategy
-    },
-  ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
