@@ -31,7 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     AuthLayoutComponent,
-    DashboardLayoutComponent,
+    SpinnerComponent,
   ],
   imports: [
     CommonModule,
