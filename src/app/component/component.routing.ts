@@ -27,7 +27,7 @@ export const ComponentsRoutes: Routes = [
 				component: NgbdpaginationBasicComponent
 			},
 			{
-				path: 'badges',
+				path: 'authors',
 				component: BadgeComponent
 			},
 			{
