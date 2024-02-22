@@ -11,7 +11,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/component/alert',
+    path: '/dashboard/component/works',
     title: 'Works',
     icon: 'bi bi-file-earmark',
     class: '',
@@ -19,7 +19,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/component/badges',
+    path: '/dashboard/component/badges',
     title: 'Authors',
     icon: 'bi bi-person-lines-fill',
     class: '',

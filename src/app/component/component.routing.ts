@@ -31,7 +31,7 @@ export const ComponentsRoutes: Routes = [
 				component: BadgeComponent
 			},
 			{
-				path: 'alert',
+				path: 'works',
 				component: NgbdAlertBasicComponent
 			},
 			{
