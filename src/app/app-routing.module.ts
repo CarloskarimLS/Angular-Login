@@ -24,7 +24,7 @@ const routes: Routes = [
   
   //App Routes
   {
-    path: '',
+    path: 'dashboard',
     component: DashboardLayoutComponent,
     children: [
       {
