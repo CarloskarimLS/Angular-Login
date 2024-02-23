@@ -8,6 +8,7 @@ import { BadgeComponent } from './badge/badge.component';
 import { NgbdButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
+import { SearchFilterComponent } from './search/search.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -21,6 +22,10 @@ export const ComponentsRoutes: Routes = [
 			{
 				path: 'card',
 				component: CardsComponent
+			},
+			{
+				path: 'search',
+				component: SearchFilterComponent
 			},
 			{
 				path: 'pagination',

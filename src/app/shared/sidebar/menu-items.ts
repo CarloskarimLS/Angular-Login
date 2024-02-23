@@ -26,6 +26,14 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+  {
+    path: '/dashboard/component/search',
+    title: 'Search',
+    icon: 'bi bi bi-search',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
   // {
   //   path: '/component/buttons',
   //   title: 'Sources',

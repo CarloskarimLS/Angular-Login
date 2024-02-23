@@ -13,6 +13,7 @@ import { NgbdButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from "./table/table.component";
 import { HttpClientModule } from '@angular/common/http';
+import { SearchFilterComponent } from './search/search.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     NgbdButtonsComponent,
     CardsComponent,
     TableComponent,
-    HttpClientModule
+    HttpClientModule,
+    SearchFilterComponent
   ],
 })
 export class ComponentsModule { }
