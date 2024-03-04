@@ -11,7 +11,14 @@ export class MySearchService {
     getData(): Observable<any> {
       const url = `https://api.openalex.org/works`;
       return this.http.get(url).pipe(
-        tap(data => console.log('Datos del servicio:', data))
+        tap(data => console.log('Works Data:', data))
+      );
+    }
+
+    getAuthors(): Observable<any> {
+      const url = `https://api.openalex.org/authors?per-page=50&page=2`;
+      return this.http.get(url).pipe(
+        tap(data => console.log('Authors Data:', data))
       );
     }
 }
