@@ -28,8 +28,8 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/dashboard/component/search',
-    title: 'Search',
-    icon: 'bi bi bi-search',
+    title: 'Web of Science',
+    icon: 'bi bi-journal-text',
     class: '',
     extralink: false,
     submenu: []
