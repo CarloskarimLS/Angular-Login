@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { NgbdAlertBasicComponent } from './component/alert/alert.component';
 
 const routes: Routes = [
   
@@ -35,10 +36,13 @@ const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+      },
+      {
+        path: 'component',
+        loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule)
       }
     ]
   }
-
 ];
 
 @NgModule({

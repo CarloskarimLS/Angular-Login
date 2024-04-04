@@ -31,7 +31,7 @@ export class NgbdAlertBasicComponent implements OnInit  {
         this.initialValue = data;
       },
       (error) => {
-        console.error('Error al obtener datos:', error);
+        console.error('Error:', error);
       }
     );
   }
